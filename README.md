@@ -65,3 +65,11 @@ All sources files can be founded in the "project/src" directory.
 ### CubeMap
 
 The cubeMap files can be founded in the "textures/cubemaps/night" directory.
+
+### Report
+
+You can find the report of this project in the "report" directory.
+
+### video
+
+You can find a small video of the project in the "video" directory.
