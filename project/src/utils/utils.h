@@ -42,7 +42,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 }
 
 
-bool processInput(GLFWwindow* window) 
+void processInput(GLFWwindow* window) 
 {
 	// Use the cameras class to change the parameters of the camera
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
@@ -77,14 +77,6 @@ bool processInput(GLFWwindow* window)
 		camera.ProcessKeyboardRotation(0.0, 1.0, 1);
 	if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
 		camera.ProcessKeyboardRotation(0.0, -1.0, 1);
-
-
-	if (glfwGetKey(window, GLFW_KEY_ENTER) == GLFW_PRESS){
-		return true;
-	}
-	else{
-		return false;
-	}
 }
 
 
