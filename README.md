@@ -2,6 +2,10 @@
 
 This is a small project with an animation of a guard that swing its lantern beside a tree against a background of starry sky.
 
+## Author
+
+Luka BONHEURE
+
 ## Libraries
 
 A few third party libraries are needed to run the project:
