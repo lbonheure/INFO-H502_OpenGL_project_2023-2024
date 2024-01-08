@@ -261,6 +261,10 @@ int main(int argc, char* argv[])
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		view = camera.GetViewMatrix();
+		// For screen resolution
+		glfwGetFramebufferSize(window, &framebuffer_width, &framebuffer_height);
+		double ratio = framebuffer_width/ framebuffer_height;
+		perspective = camera.GetProjectionMatrix(45.0, ratio);
 
 		// Use the shader Class to send the uniform
 		shader_character.use();
@@ -275,13 +279,6 @@ int main(int argc, char* argv[])
 		std::vector<glm::mat4> transforms;
 		character.getBoneTransforms(AnimationTimeSec, transforms);
 		shader_character.setMatrix4Array("gBones", transforms, transforms.size());
-
-		// For screen resolution
-		glfwGetFramebufferSize(window, &framebuffer_width, &framebuffer_height);
-
-		double ratio = framebuffer_width/ framebuffer_height;
-		perspective = camera.GetProjectionMatrix(45.0, ratio);
-		
 		shader_character.setMatrix4("M", World);
 		shader_character.setMatrix4("V", view);
 		shader_character.setMatrix4("P", perspective);
