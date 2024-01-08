@@ -111,7 +111,7 @@ void init_OpenGL()
 
 int main(int argc, char* argv[])
 {
-	std::cout << "Welcome in my guard animation!" << std::endl;
+	std::cout << "Welcome in my OpenGL project!" << std::endl;
 
 	//Boilerplate
 	init_OpenGL();
@@ -183,14 +183,13 @@ int main(int argc, char* argv[])
 	* Include Objects *
 	*******************/
 
-	char path_character[] = PATH_TO_OBJECTS "/ogldev_ex/boblampclean.md5mesh";//"/man/model.dae"; //"/simple/model.dae";//"/ogldev_ex/boblampclean.md5mesh";//"/mc_walking/mc_walking.dae";
+	char path_character[] = PATH_TO_OBJECTS "/ogldev_guard/boblampclean.md5mesh";//"/man/model.dae"; //"/simple/model.dae";//"/ogldev_ex/boblampclean.md5mesh";//"/mc_walking/mc_walking.dae";
 	AnimatedObject character = AnimatedObject();
 	character.LoadMesh(path_character);
 
 	char path_ground[] = PATH_TO_OBJECTS "/plane.obj";
 	Object ground = Object(path_ground);
 	ground.makeObject(shader_ground, false);
-	//std::cout << "mesh loaded" << std::endl;
 
 	char path_tree[] = PATH_TO_OBJECTS "/sapin.dae";
 	StaticObject tree = StaticObject();
