@@ -4,10 +4,7 @@ cmake_minimum_required (VERSION 3.21)
 project(opengl_project_info-h502)
 
 
-set(COMPILE_SIMPLE_BULLET_DEMO FALSE CACHE BOOL "compile the bullet demo")
-set(COMPILE_MY_GAME TRUE CACHE BOOL "compile my game")
-set(COMPILE_SAND_BOX TRUE CACHE BOOL "compile sandbox")
-set(COMPILE_SIMPLE_PROJECT TRUE CACHE BOOL "compile simple_project")
+set(COMPILE_SIMPLE_PROJECT TRUE CACHE BOOL "compile project")
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -15,7 +12,7 @@ set(CMAKE_CXX_STANDARD 17)
 find_package(OpenGL REQUIRED)
 
 #for glad library
-add_library( glad STATIC 3rdParty/glad/src/glad.c "simpleBullet/src/main.cpp" "my_game/src/main.cpp" "sand_box/src/main.cpp" "simple_project/src/main.cpp")
+add_library( glad STATIC 3rdParty/glad/src/glad.c "project/src/main.cpp")
 set(GLAD_INCLUDE "3rdParty/glad/include")
 target_include_directories(glad PUBLIC ${GLAD_INCLUDE})
 
@@ -61,22 +58,8 @@ endif()
 
 add_compile_definitions(PATH_TO_OBJECTS="${CMAKE_CURRENT_SOURCE_DIR}/objects")
 add_compile_definitions(PATH_TO_TEXTURE="${CMAKE_CURRENT_SOURCE_DIR}/textures")
-add_compile_definitions(PATH_TO_MY_GAME_SHADERS="${CMAKE_CURRENT_SOURCE_DIR}/my_game/src/shaders")
-add_compile_definitions(PATH_TO_SAND_BOX_SHADERS="${CMAKE_CURRENT_SOURCE_DIR}/sand_box/src/shaders")
-add_compile_definitions(PATH_TO_SIMPLE_PROJECT_SHADERS="${CMAKE_CURRENT_SOURCE_DIR}/simple_project/src/shaders")
-
-if(COMPILE_SIMPLE_BULLET_DEMO)
-	add_subdirectory(simpleBullet)
-endif()
-
-if(COMPILE_MY_GAME)
-	add_subdirectory(my_game)
-endif()
-
-if(COMPILE_SAND_BOX)
-	add_subdirectory(sand_box)
-endif()
+add_compile_definitions(PATH_TO_PROJECT_SHADERS="${CMAKE_CURRENT_SOURCE_DIR}/project/src/shaders")
 
 if(COMPILE_SIMPLE_PROJECT)
-	add_subdirectory(simple_project)
+	add_subdirectory(project)
 endif()
