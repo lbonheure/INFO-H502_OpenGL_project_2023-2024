@@ -1,3 +1,5 @@
+// This code is heavely inspired by the code of Etay Meiri in its tutorial (https://github.com/emeiri/ogldev/tree/master/tutorial28_youtube)
+
 #ifndef LIGHT_H
 #define LIGHT_H
 

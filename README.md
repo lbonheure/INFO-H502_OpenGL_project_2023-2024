@@ -10,7 +10,7 @@ A few third party libraries are needed to run the project:
 - glm
 - stb
 
-All are available in the third party directory. Some are included via submodules, so, you must use --recusive flag to download them.
+All are available in the third party directory. Some are included via submodules, so, you must use --recusive flag in git clone to download them.
 
 ## How to run
 

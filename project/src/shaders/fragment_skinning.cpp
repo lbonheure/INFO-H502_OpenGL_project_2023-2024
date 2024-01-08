@@ -1,5 +1,7 @@
 #version 440 core
 
+// This shader is based on the fragment shader of Etay Meiri in its tutorial (https://github.com/emeiri/ogldev/blob/master/tutorial28_youtube/skinning.fs)
+
 const int MAX_POINT_LIGHTS = 2;
 const int MAX_SPOT_LIGHTS = 2;
 

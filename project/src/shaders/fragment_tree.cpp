@@ -1,5 +1,7 @@
 #version 440 core
 
+// This shader is based on the fragment shader of Etay Meiri in its tutorial (https://github.com/emeiri/ogldev/blob/master/tutorial28_youtube/skinning.fs)
+
 const int MAX_POINT_LIGHTS = 2;
 const int MAX_SPOT_LIGHTS = 2;
 
@@ -85,7 +87,7 @@ vec4 CalcLightInternal(BaseLight Light, vec3 LightDirection, vec3 Normal)
         vec3 LightReflect = normalize(reflect(LightDirection, Normal));
         float SpecularFactor = dot(PixelToCamera, LightReflect);
         if (SpecularFactor > 0) {
-            float SpecularExponent = texture(gSamplerSpecularExponent, TexCoord0).r * 255.0;//texture2D(gSamplerSpecularExponent, TexCoord0).r * 255.0;
+            float SpecularExponent = texture(gSamplerSpecularExponent, TexCoord0).r * 255.0;
             SpecularFactor = pow(SpecularFactor, SpecularExponent);
             SpecularColor = vec4(Light.Color, 1.0f) *
                             Light.DiffuseIntensity * // using the diffuse intensity for diffuse/specular
@@ -145,6 +147,6 @@ void main() {
         TotalLight += CalcSpotLight(gSpotLights[i], Normal);
     }
 
-    vec3 color = vec3(0.0, 0.4, 0.0);//gMaterial.AmbientColor;//texture(gSampler, TexCoord0).rgb;
+    vec3 color = vec3(0.0, 0.4, 0.0);//texture(gSampler, TexCoord0).rgb;
     FragColor = vec4(color, 1.0)*TotalLight;
 };

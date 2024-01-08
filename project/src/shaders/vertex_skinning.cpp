@@ -1,5 +1,8 @@
 #version 440 core
 
+// This shader is inpired of the vertex shaders of Etay Meiri in its tutorial (https://github.com/emeiri/ogldev/blob/master/tutorial28_youtube/skinning.vs)
+// and of hasinaxp (https://github.com/hasinaxp/skeletal_animation-_assimp_opengl/blob/master/main.cpp)
+
 layout (location = 0) in vec3 position;
 layout (location = 1) in vec2 texCoord;
 layout (location = 2) in vec3 normal;

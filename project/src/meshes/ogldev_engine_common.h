@@ -16,6 +16,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+// source of this file: https://github.com/emeiri/ogldev/tree/master
+
 #ifndef OGLDEV_ENGINE_COMMON_H
 #define OGLDEV_ENGINE_COMMON_H
 
