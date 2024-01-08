@@ -66,8 +66,6 @@ public:
 			const struct aiMesh* mesh = scene->mMeshes[n];
 			//std::cout << "mesh" << std::endl;
 
-			//apply_material(scene->mMaterials[mesh->mMaterialIndex]);
-
 			for (int t = 0; t < mesh->mNumFaces; ++t) {
 				const struct aiFace* face = &mesh->mFaces[t];
 				//std::cout << "face" << std::endl;
@@ -78,8 +76,6 @@ public:
 					Vertex v;
 					
 					int vertexIndex = face->mIndices[i];	// get group index for current index
-					if(mesh->mColors[0] != nullptr)
-						//vec4 color = &mesh->mColors[0][vertexIndex];	// color vertex
 					if(mesh->mNormals != nullptr)
 
 						if(mesh->HasTextureCoords(0))		//HasTextureCoords(texture_coordinates_set)
@@ -100,11 +96,6 @@ public:
 
 
 	void makeObject(Shader shader, bool texture = true) {
-		/* This is a working but not perfect solution, you can improve it if you need/want
-		* What happens if you call this function twice on an Model ?
-		* What happens when a shader doesn't have a position, tex_coord or normal attribute ?
-		*/
-
 		float* data = new float[8 * numVertices];
 		for (int i = 0; i < numVertices; i++) {
 			Vertex v = vertices.at(i);

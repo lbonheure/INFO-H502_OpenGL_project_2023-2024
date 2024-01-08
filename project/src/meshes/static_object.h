@@ -219,8 +219,6 @@ public:
     {
         std::string directory = getDirFromPath(path);
 
-        //std::cout << "Num materials: " << scene->mNumMaterials << std::endl;
-
         // Initialize the materials
         for (unsigned int i = 0 ; i < scene->mNumMaterials ; i++) {
             const aiMaterial* material = scene->mMaterials[i];
@@ -357,8 +355,8 @@ public:
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(m_Indices[0]) * m_Indices.size(), &m_Indices[0], GL_STATIC_DRAW);
 
         //desactive the buffer
-		//glBindBuffer(GL_ARRAY_BUFFER, 0);
-		//glBindVertexArray(0);
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		glBindVertexArray(0);
     }
 
 

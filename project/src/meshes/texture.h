@@ -16,6 +16,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+// source of this code: https://github.com/emeiri/ogldev/tree/master
+
 #ifndef TEXTURE_H
 #define TEXTURE_H
 

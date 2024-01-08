@@ -27,8 +27,6 @@
 #include "texture.h"
 #include "world_transform.h"
 
-#include "ogldev_engine_common.h"
-
 using namespace Assimp;
 
 #define ARRAY_SIZE_IN_ELEMENTS(a) (sizeof(a)/sizeof(a[0]))
@@ -485,8 +483,8 @@ public:
 
 
         //desactive the buffer
-		//glBindBuffer(GL_ARRAY_BUFFER, 0);
-		//glBindVertexArray(0);
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		glBindVertexArray(0);
     }
     
 
