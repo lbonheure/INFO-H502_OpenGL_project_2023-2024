@@ -29,20 +29,6 @@ if (NOT glfw3_FOUND)
     include_directories(3rdParty/glfw/include/)
 endif()
 
-
-find_package(Bullet)
-if(NOT Bullet_FOUND)
-    option(BUILD_BULLET2_DEMOS OFF)
-    option(BUILD_CPU_DEMOS OFF)
-    option(BUILD_EXTRAS OFF)
-    option(BUILD_OPENGL3_DEMOS OFF)
-    option(BUILD_UNIT_TESTS OFF)
-    add_subdirectory(3rdParty/bullet)
-    include_directories(3rdParty/bullet/src)
-else()
-    include_directories(${BULLET_INCLUDE_DIR}) 
-endif()
-
 include_directories(3rdParty/glad/include/
                     3rdParty/glm/
                     3rdParty/stb/)
